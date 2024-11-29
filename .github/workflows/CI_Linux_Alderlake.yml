@@ -15,8 +15,19 @@ jobs:
       with:
         fetch-depth: 0
 
+    # 安装 Python 依赖
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # 根据需要选择合适的 Python 版本
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt  # 如果您的项目中有 requirements.txt
+        pip install scipy  # 如果没有 requirements.txt，确保安装 scipy
+
     - name: Benchmark
       shell: bash
       working-directory: ${{github.workspace}}
       run: python3 buildbot/runCI.py -workdir ${{github.workspace}}/labs -runner LinuxIntelAlderlake
-
