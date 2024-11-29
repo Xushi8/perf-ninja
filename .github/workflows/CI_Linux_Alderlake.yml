@@ -1,7 +1,6 @@
 name: Benchmark on Linux + Alderlake
 
-on:
-  workflow_dispatch:  # 仅允许手动触发工作流
+on: workflow_dispatch:  # 仅允许手动触发工作流
 
 env:
   BUILD_TYPE: Release
