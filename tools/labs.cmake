@@ -13,7 +13,8 @@ endif()
 
 # Just use the variable
 if("${CMAKE_BUILD_TYPE}" STREQUAL "")
-  message("Please consider: cmake -DCMAKE_BUILD_TYPE=Release ..")
+#   message("Please consider: cmake -DCMAKE_BUILD_TYPE=Release ..")
+    set(CMAKE_BUILD_TYPE Release)
 endif()
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
